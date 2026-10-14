@@ -568,11 +568,11 @@ input:focus,select:focus{border-color:var(--goud);outline:none}
 .trede[data-t="0"]{min-height:250px}.trede[data-t="1"]{min-height:300px}.trede[data-t="2"]{min-height:350px}
 .tr-nr{font-size:clamp(46px,4.6vw,68px);font-weight:200;letter-spacing:-.05em;line-height:1;color:#9c7a4a;margin:0 0 14px}
 .tr-naam{font-size:clamp(22px,2vw,28px);letter-spacing:-.02em;margin:0 0 4px}
-.tr-wanneer{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8a8276;margin:0 0 16px}
+.tr-wanneer{font-size:14px;line-height:1.45;color:#8a8276;margin:0 0 18px;padding-bottom:16px;border-bottom:1px solid rgba(33,29,24,.12)}.trede[data-t="2"] .tr-wanneer{border-color:rgba(243,237,227,.14)}
 .trede ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .trede li{position:relative;padding-left:22px;font-size:15px;line-height:1.45;color:#5d564d}
 .trede li::before{content:'';position:absolute;left:0;top:7px;width:10px;height:10px;border-radius:50%;border:1.5px solid #9c7a4a}
-.trede.bereikt{background:#211d18;color:#f3ede3}
+.trede[data-t="2"]{background:#211d18;color:#f3ede3}.trede[data-t="2"] li{color:#d8d0c3}.trede[data-t="2"] .tr-nr{color:#c9a877}.trede[data-t="2"] .tr-wanneer{color:#a89f92}.trede[data-t="2"] li::before{border-color:#c9a877}
 .trede.bereikt .tr-nr{color:#c9a877}
 .trede.bereikt li{color:#d8d0c3}
 .trede.bereikt li::before{background:#c9a877;border-color:#c9a877}
@@ -670,10 +670,8 @@ input:focus,select:focus{border-color:var(--goud);outline:none}
   <section id="pakket" class="licht">
     <div class="kop-blok"><p class="eye">Partner-ladder</p><h2>Goed werk<br>brengt je hoger.</h2></div>
     <div class="binnen trap-wrap">
-      <p class="dim" style="font-size:clamp(17px,1.4vw,20px);line-height:1.55;max-width:60ch;margin:0 0 30px">Iedere partner begint als Starter. Met elke mijlpaal klim je een stap, en hoe hoger je staat, hoe eerder jij de klus krijgt. Tik aan wat jij al waarmaakt.</p>
-      <div class="tr-badges" role="group" aria-label="Mijlpalen"><button type="button" class="tr-badge" data-m="m1" aria-pressed="false"><span class="tr-ic"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M5 14.5l6 6L23 8"/></svg></span><b>Eerste klus</b><small>opgeleverd</small></button><button type="button" class="tr-badge" data-m="m2" aria-pressed="false"><span class="tr-ic"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="10.5"/><path d="M14 8v6l4 3"/></svg></span><b>48 + 48 uur</b><small>altijd op tijd</small></button><button type="button" class="tr-badge" data-m="m3" aria-pressed="false"><span class="tr-ic"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 3.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L14 19.3l-6.4 3.6 1.5-7.1-5.4-4.9 7.2-.8z"/></svg></span><b>4,5 ster</b><small>van je klanten</small></button><button type="button" class="tr-badge" data-m="m4" aria-pressed="false"><span class="tr-ic"><svg viewBox="0 0 28 28" aria-hidden="true"><rect x="4.5" y="4.5" width="19" height="19" rx="2"/><path d="M9 14h10M14 9v10"/></svg></span><b>Vijf klussen</b><small>netjes opgeleverd</small></button><button type="button" class="tr-badge" data-m="m5" aria-pressed="false"><span class="tr-ic"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 3.5l9 3.5v6.5c0 5.5-4 9.5-9 11-5-1.5-9-5.5-9-11V7z"/><path d="M10 14l3 3 5-6"/></svg></span><b>Een jaar</b><small>zonder klachten</small></button></div>
-      <div class="tr-balk" aria-hidden="true"><i id="trBalk"></i></div>
-      <div class="trap" id="trap" aria-live="polite"><div class="trede" data-t="0"><span class="tr-jij" aria-hidden="true">Jij</span><p class="tr-nr">01</p><p class="tr-naam">Starter</p><p class="tr-wanneer">Direct na je aanmelding</p><ul><li>Klussen in je regio</li><li>Wij vinden de klant en laten tekenen</li></ul></div><div class="trede" data-t="1"><span class="tr-jij" aria-hidden="true">Jij</span><p class="tr-nr">02</p><p class="tr-naam">Vaste partner</p><p class="tr-wanneer">Vanaf 2 mijlpalen</p><ul><li>Voorrang in je regio</li><li>Nieuwe klanten in jouw vak eerst bij jou</li></ul></div><div class="trede" data-t="2"><span class="tr-jij" aria-hidden="true">Jij</span><p class="tr-nr">03</p><p class="tr-naam">Top-partner</p><p class="tr-wanneer">Alle 5 mijlpalen</p><ul><li>Eerste keus bij hele klussen</li><li>Jij bent de vakman die we het eerst bellen</li></ul></div></div>
+      <p class="dim" style="font-size:clamp(17px,1.4vw,20px);line-height:1.55;max-width:60ch;margin:0 0 44px">Iedere partner begint als Starter. Wie snel is, netjes oplevert en tevreden klanten heeft, klimt een trede hoger. Hoe hoger je staat, hoe eerder jij de klus krijgt.</p>
+      <div class="trap"><div class="trede" data-t="0"><p class="tr-nr">01</p><p class="tr-naam">Starter</p><p class="tr-wanneer">Direct na je aanmelding</p><ul><li>Klussen in je regio</li><li>Wij vinden de klant en laten tekenen</li></ul></div><div class="trede" data-t="1"><p class="tr-nr">02</p><p class="tr-naam">Vaste partner</p><p class="tr-wanneer">Na je eerste klus, altijd binnen 48 + 48 uur</p><ul><li>Voorrang in je regio</li><li>Nieuwe klanten in jouw vak eerst bij jou</li></ul></div><div class="trede" data-t="2"><p class="tr-nr">03</p><p class="tr-naam">Top-partner</p><p class="tr-wanneer">Vijf klussen, 4,5 ster en een jaar zonder klachten</p><ul><li>Eerste keus bij hele klussen</li><li>Jij bent de vakman die we het eerst bellen</li></ul></div></div>
     </div>
   </section>
 
@@ -957,11 +955,7 @@ i.addEventListener('click',()=>{vast=vast===i.dataset.laag?null:i.dataset.laag;t
 i.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();i.click()}})});
 })();
 
-(function(){const trap=document.getElementById('trap');if(!trap)return;
-const bs=[...document.querySelectorAll('.tr-badge')],tr=[...trap.querySelectorAll('.trede')],balk=document.getElementById('trBalk');
-function update(){const n=bs.filter(b=>b.classList.contains('aan')).length;const t=n>=5?2:n>=2?1:0;
-balk.style.width=(n/5*100)+'%';tr.forEach((d,x)=>{d.classList.toggle('bereikt',x<=t);d.classList.toggle('nu',x===t)})}
-bs.forEach(b=>b.addEventListener('click',()=>{const on=b.classList.toggle('aan');b.setAttribute('aria-pressed',on);update()}));update()})();
+
 
 (function(){const box=document.getElementById('prijsvelden');if(!box)return;const f=()=>{box.hidden=(document.querySelector('input[name="prijsmodus"]:checked')||{}).value!=='nu'};document.querySelectorAll('input[name="prijsmodus"]').forEach(i=>i.addEventListener('change',f));f()})();
 
