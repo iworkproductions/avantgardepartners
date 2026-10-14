@@ -583,6 +583,12 @@ input:focus,select:focus{border-color:var(--goud);outline:none}
 .trede[data-t="2"].bereikt{background:linear-gradient(160deg,#2b241a,#0d0b09);box-shadow:0 0 0 1px #c9a877 inset,0 30px 70px -24px rgba(201,168,119,.6)}
 @media(max-width:900px){.tr-badges{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:640px){.tr-badges{grid-template-columns:repeat(2,minmax(0,1fr))}.trap{grid-template-columns:1fr;gap:22px}.trede[data-t]{min-height:0}}
+.vd-rij{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4vw}
+.vd{border-top:1px solid #211d18;padding-top:22px}
+.vd-k{font-size:clamp(24px,2.2vw,30px);letter-spacing:-.02em;margin:0 0 10px;color:#211d18}
+.vd p:last-child{font-size:16px;line-height:1.55;color:#5d564d;max-width:34ch}
+.vd-slot{margin:44px 0 0;font-size:clamp(17px,1.4vw,20px);line-height:1.5;color:#211d18;max-width:60ch}
+@media(max-width:760px){.vd-rij{grid-template-columns:1fr;gap:28px}}
 </style>
 </head>
 <body>
@@ -668,10 +674,11 @@ input:focus,select:focus{border-color:var(--goud);outline:none}
   </section>
 
   <section id="pakket" class="licht">
-    <div class="kop-blok"><p class="eye">Partner-ladder</p><h2>Goed werk<br>brengt je hoger.</h2></div>
-    <div class="binnen trap-wrap">
-      <p class="dim" style="font-size:clamp(17px,1.4vw,20px);line-height:1.55;max-width:60ch;margin:0 0 44px">Iedere partner begint als Starter. Wie snel is, netjes oplevert en tevreden klanten heeft, klimt een trede hoger. Hoe hoger je staat, hoe eerder jij de klus krijgt.</p>
-      <div class="trap"><div class="trede" data-t="0"><p class="tr-nr">01</p><p class="tr-naam">Starter</p><p class="tr-wanneer">Direct na je aanmelding</p><ul><li>Klussen in je regio</li><li>Wij vinden de klant en laten tekenen</li></ul></div><div class="trede" data-t="1"><p class="tr-nr">02</p><p class="tr-naam">Vaste partner</p><p class="tr-wanneer">Na je eerste klus, altijd binnen 48 + 48 uur</p><ul><li>Voorrang in je regio</li><li>Nieuwe klanten in jouw vak eerst bij jou</li></ul></div><div class="trede" data-t="2"><p class="tr-nr">03</p><p class="tr-naam">Top-partner</p><p class="tr-wanneer">Vijf klussen, 4,5 ster en een jaar zonder klachten</p><ul><li>Eerste keus bij hele klussen</li><li>Jij bent de vakman die we het eerst bellen</li></ul></div></div>
+    <div class="kop-blok"><p class="eye">Klussen verdelen</p><h2>Wie goed levert,<br>krijgt meer werk.</h2></div>
+    <div class="binnen">
+      <p class="dim" style="font-size:clamp(17px,1.4vw,20px);line-height:1.55;max-width:60ch;margin:0 0 40px">Een klus gaat naar een partner die past bij het vak en de regio. Zijn er meer partners in jouw regio, dan kijken we naar drie dingen.</p>
+      <div class="vd-rij"><div class="vd"><p class="vd-k">Snel</p><p>Binnen 48 uur bij de klant en binnen 48 uur daarna je offerte bij ons. Zo houden we de klant warm.</p></div><div class="vd"><p class="vd-k">Netjes</p><p>Je bouwt wat in je offerte staat en levert schoon op. De klant vertelt ons hoe het ging.</p></div><div class="vd"><p class="vd-k">Betrouwbaar</p><p>Je komt je planning na en lost vragen en klachten zelf op met de klant.</p></div></div>
+      <p class="vd-slot">Partners die dit structureel waarmaken krijgen voorrang, en als eerste de hele klussen in hun regio.</p>
     </div>
   </section>
 
