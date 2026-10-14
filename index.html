@@ -546,6 +546,43 @@ input:focus,select:focus{border-color:var(--goud);outline:none}
 @media(max-width:900px){.pa-grid{grid-template-columns:1fr;gap:8vh;padding:0 6vw 12vh}.pa-kop{padding:14vh 6vw 6vh}}
 @media(max-width:560px){.pa-kaart{padding:28px 22px 20px}.pa-knoppen{grid-template-columns:1fr}.pa-knoppen button{min-height:56px;font-size:15px}.pa-rij{grid-template-columns:1fr;gap:0}.pa-vraag{margin:22px 0 16px}}
 @media(prefers-reduced-motion:reduce){.pa-scherm,.pa-form,.pa-dank{animation:none}.pa-vink circle,.pa-vink path{animation:none;stroke-dashoffset:0}}
+
+/* partner-ladder als trap */
+.tr-badges{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.tr-badge{font:inherit;display:flex;flex-direction:column;align-items:center;gap:6px;padding:20px 10px 18px;border-radius:16px;border:1px solid rgba(33,29,24,.12);background:#fff;color:#211d18;cursor:pointer;transition:border-color .25s,background .25s,transform .15s,box-shadow .25s}
+.tr-badge:hover{border-color:#9c7a4a}
+.tr-badge:active{transform:scale(.97)}
+.tr-badge:focus-visible{outline:2px solid #9c7a4a;outline-offset:3px}
+.tr-ic{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;border:1.5px dashed rgba(33,29,24,.25);margin-bottom:6px;transition:all .3s}
+.tr-ic svg{width:24px;height:24px;fill:none;stroke:#8a8276;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;transition:stroke .3s}
+.tr-badge b{font-weight:500;font-size:15px}
+.tr-badge small{font-size:12.5px;color:#8a8276;text-align:center}
+.tr-badge.aan{background:#211d18;border-color:#211d18;color:#f3ede3;box-shadow:0 18px 40px -22px rgba(13,11,9,.6)}
+.tr-badge.aan .tr-ic{border:1.5px solid #c9a877;background:rgba(201,168,119,.16)}
+.tr-badge.aan .tr-ic svg{stroke:#c9a877}
+.tr-badge.aan small{color:#a89f92}
+.tr-balk{height:4px;background:rgba(33,29,24,.1);border-radius:2px;margin:26px 0 30px;overflow:hidden}
+.tr-balk i{display:block;height:100%;width:0;background:#9c7a4a;transition:width .55s cubic-bezier(.22,1,.36,1)}
+.trap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:end}
+.trede{position:relative;border-radius:18px;padding:26px 24px 28px;background:#ebe5d9;color:#211d18;transition:background .4s,color .4s,box-shadow .4s}
+.trede[data-t="0"]{min-height:250px}.trede[data-t="1"]{min-height:300px}.trede[data-t="2"]{min-height:350px}
+.tr-nr{font-size:clamp(46px,4.6vw,68px);font-weight:200;letter-spacing:-.05em;line-height:1;color:#9c7a4a;margin:0 0 14px}
+.tr-naam{font-size:clamp(22px,2vw,28px);letter-spacing:-.02em;margin:0 0 4px}
+.tr-wanneer{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8a8276;margin:0 0 16px}
+.trede ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.trede li{position:relative;padding-left:22px;font-size:15px;line-height:1.45;color:#5d564d}
+.trede li::before{content:'';position:absolute;left:0;top:7px;width:10px;height:10px;border-radius:50%;border:1.5px solid #9c7a4a}
+.trede.bereikt{background:#211d18;color:#f3ede3}
+.trede.bereikt .tr-nr{color:#c9a877}
+.trede.bereikt li{color:#d8d0c3}
+.trede.bereikt li::before{background:#c9a877;border-color:#c9a877}
+.trede.bereikt .tr-wanneer{color:#a89f92}
+.tr-jij{position:absolute;top:-14px;right:20px;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;background:#c9a877;color:#0d0b09;padding:6px 12px;border-radius:980px;opacity:0;transform:translateY(6px);transition:opacity .35s,transform .35s}
+.trede.nu .tr-jij{opacity:1;transform:none}
+.trede.nu{box-shadow:0 30px 60px -28px rgba(13,11,9,.7)}
+.trede[data-t="2"].bereikt{background:linear-gradient(160deg,#2b241a,#0d0b09);box-shadow:0 0 0 1px #c9a877 inset,0 30px 70px -24px rgba(201,168,119,.6)}
+@media(max-width:900px){.tr-badges{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:640px){.tr-badges{grid-template-columns:repeat(2,minmax(0,1fr))}.trap{grid-template-columns:1fr;gap:22px}.trede[data-t]{min-height:0}}
 </style>
 </head>
 <body>
@@ -631,33 +668,12 @@ input:focus,select:focus{border-color:var(--goud);outline:none}
   </section>
 
   <section id="pakket" class="licht">
-    <div class="kop-blok"><p class="eye">Partner-ladder</p><h2>Bouw je plek.<br>Klim naar de top.</h2></div>
-    <div class="binnen pakket">
-      <div class="config">
-        <p class="dim" style="font-size:17px;line-height:1.55;margin-bottom:28px">Bij Avant-Garde word je beloond voor goed werk. Elke mijlpaal laat je partnerscore stijgen en brengt je een trede hoger. Hoe hoger je staat, hoe eerder jij de klus krijgt. Zet ze maar eens aan.</p>
-        <fieldset class="kies"><legend class="kopje">Mijlpalen</legend>
-          <label class="schakel"><span class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M5 14.5l6 6L23 8"/></svg></span><span>Je eerste klus opgeleverd</span><input type="checkbox" id="m1"><i aria-hidden="true"></i></label><label class="schakel"><span class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="10.5"/><path d="M14 8v6l4 3"/></svg></span><span>Altijd binnen 48 uur langs, 48 uur later je offerte</span><input type="checkbox" id="m2"><i aria-hidden="true"></i></label><label class="schakel"><span class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 3.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L14 19.3l-6.4 3.6 1.5-7.1-5.4-4.9 7.2-.8z"/></svg></span><span>Klanten geven je gemiddeld 4,5 ster of meer</span><input type="checkbox" id="m3"><i aria-hidden="true"></i></label><label class="schakel"><span class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><rect x="4.5" y="4.5" width="19" height="19" rx="2"/><path d="M9 14h10M14 9v10"/></svg></span><span>Vijf klussen netjes opgeleverd</span><input type="checkbox" id="m4"><i aria-hidden="true"></i></label><label class="schakel"><span class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M7 3.5h14v21H7z"/><path d="M10.5 9h7M10.5 13h7M10.5 17h4"/></svg></span><span>Een jaar zonder klachten</span><input type="checkbox" id="m5"><i aria-hidden="true"></i></label>
-        </fieldset>
-        <div class="uitkomst" aria-live="polite">
-          <div class="ladder" aria-hidden="true"><span data-t="0">Starter</span><span data-t="1">Vaste partner</span><span data-t="2">Top-partner</span></div>
-          <div class="ladbalk" aria-hidden="true"><i id="lad-balk"></i></div>
-          <p class="naam" id="lad-naam">Starter</p>
-          <p class="dim" id="lad-wat"></p>
-        </div>
-      </div>
-      <div>
-        <div class="pkaart" id="pkaart" aria-live="polite">
-          <div class="pk-glans" aria-hidden="true"></div>
-          <div class="pk-top"><div class="pk-score"><b id="pk-score">60</b><span>Partnerscore</span></div><div class="pk-niv" id="pk-niv">Starter</div></div>
-          <p class="pk-wie">Zo groei jij</p>
-          <p class="pk-vak" id="pk-vak">Vakman crepi</p>
-          <div class="pk-chips" role="group" aria-label="Kies je vak"><button type="button" class="pk-chip" data-vak="Dak">Dak</button><button type="button" class="pk-chip" data-vak="Kozijnen">Kozijnen</button><button type="button" class="pk-chip aan" data-vak="Crepi">Crepi</button><button type="button" class="pk-chip" data-vak="Hout">Hout</button><button type="button" class="pk-chip" data-vak="Steen">Steen</button></div>
-          <div class="pk-stats"><div class="pk-stat"><span>Snelheid</span><i><b data-s="snel"></b></i></div><div class="pk-stat"><span>Klantscore</span><i><b data-s="klant"></b></i></div><div class="pk-stat"><span>Opleveringen</span><i><b data-s="erv"></b></i></div><div class="pk-stat"><span>Klachtvrij</span><i><b data-s="prijs"></b></i></div></div>
-          <div class="pk-badges" aria-label="Verdiende mijlpalen"><span class="pk-badge" data-m="m1"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M5 14.5l6 6L23 8"/></svg></span><span class="pk-badge" data-m="m2"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="10.5"/><path d="M14 8v6l4 3"/></svg></span><span class="pk-badge" data-m="m3"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 3.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L14 19.3l-6.4 3.6 1.5-7.1-5.4-4.9 7.2-.8z"/></svg></span><span class="pk-badge" data-m="m4"><svg viewBox="0 0 28 28" aria-hidden="true"><rect x="4.5" y="4.5" width="19" height="19" rx="2"/><path d="M9 14h10M14 9v10"/></svg></span><span class="pk-badge" data-m="m5"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M7 3.5h14v21H7z"/><path d="M10.5 9h7M10.5 13h7M10.5 17h4"/></svg></span></div>
-          <a href="#aanmelden" class="pil pk-cta">Word partner</a>
-          <p class="pk-noot">Gratis aanmelden. Je begint als Starter.</p>
-        </div>
-      </div>
+    <div class="kop-blok"><p class="eye">Partner-ladder</p><h2>Goed werk<br>brengt je hoger.</h2></div>
+    <div class="binnen trap-wrap">
+      <p class="dim" style="font-size:clamp(17px,1.4vw,20px);line-height:1.55;max-width:60ch;margin:0 0 30px">Iedere partner begint als Starter. Met elke mijlpaal klim je een stap, en hoe hoger je staat, hoe eerder jij de klus krijgt. Tik aan wat jij al waarmaakt.</p>
+      <div class="tr-badges" role="group" aria-label="Mijlpalen"><button type="button" class="tr-badge" data-m="m1" aria-pressed="false"><span class="tr-ic"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M5 14.5l6 6L23 8"/></svg></span><b>Eerste klus</b><small>opgeleverd</small></button><button type="button" class="tr-badge" data-m="m2" aria-pressed="false"><span class="tr-ic"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="10.5"/><path d="M14 8v6l4 3"/></svg></span><b>48 + 48 uur</b><small>altijd op tijd</small></button><button type="button" class="tr-badge" data-m="m3" aria-pressed="false"><span class="tr-ic"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 3.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L14 19.3l-6.4 3.6 1.5-7.1-5.4-4.9 7.2-.8z"/></svg></span><b>4,5 ster</b><small>van je klanten</small></button><button type="button" class="tr-badge" data-m="m4" aria-pressed="false"><span class="tr-ic"><svg viewBox="0 0 28 28" aria-hidden="true"><rect x="4.5" y="4.5" width="19" height="19" rx="2"/><path d="M9 14h10M14 9v10"/></svg></span><b>Vijf klussen</b><small>netjes opgeleverd</small></button><button type="button" class="tr-badge" data-m="m5" aria-pressed="false"><span class="tr-ic"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 3.5l9 3.5v6.5c0 5.5-4 9.5-9 11-5-1.5-9-5.5-9-11V7z"/><path d="M10 14l3 3 5-6"/></svg></span><b>Een jaar</b><small>zonder klachten</small></button></div>
+      <div class="tr-balk" aria-hidden="true"><i id="trBalk"></i></div>
+      <div class="trap" id="trap" aria-live="polite"><div class="trede" data-t="0"><span class="tr-jij" aria-hidden="true">Jij</span><p class="tr-nr">01</p><p class="tr-naam">Starter</p><p class="tr-wanneer">Direct na je aanmelding</p><ul><li>Klussen in je regio</li><li>Wij vinden de klant en laten tekenen</li></ul></div><div class="trede" data-t="1"><span class="tr-jij" aria-hidden="true">Jij</span><p class="tr-nr">02</p><p class="tr-naam">Vaste partner</p><p class="tr-wanneer">Vanaf 2 mijlpalen</p><ul><li>Voorrang in je regio</li><li>Nieuwe klanten in jouw vak eerst bij jou</li></ul></div><div class="trede" data-t="2"><span class="tr-jij" aria-hidden="true">Jij</span><p class="tr-nr">03</p><p class="tr-naam">Top-partner</p><p class="tr-wanneer">Alle 5 mijlpalen</p><ul><li>Eerste keus bij hele klussen</li><li>Jij bent de vakman die we het eerst bellen</li></ul></div></div>
     </div>
   </section>
 
@@ -941,23 +957,11 @@ i.addEventListener('click',()=>{vast=vast===i.dataset.laag?null:i.dataset.laag;t
 i.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();i.click()}})});
 })();
 
-(function(){const kaart=document.getElementById('pkaart');const naamEl=document.getElementById('lad-naam');if(!kaart||!naamEl)return;
-const wat=document.getElementById('lad-wat'),balk=document.getElementById('lad-balk'),tr=[...document.querySelectorAll('.ladder span')];
-const scoreEl=document.getElementById('pk-score'),nivEl=document.getElementById('pk-niv'),vakEl=document.getElementById('pk-vak');
-const ids=['m1','m2','m3','m4','m5'],SC=[60,68,76,84,92,99];let huidig=60;
-const T=[['Starter','Je krijgt klussen in je regio. Wij vinden de klant, jij meet in, wij laten tekenen.'],
-['Vaste partner','Voorrang in je regio: nieuwe klanten in jouw vak komen eerst bij jou.'],
-['Top-partner','Eerste keus bij hele klussen in je regio: jij bent de vakman die we het eerst bellen.']];
-function tel(doel){const start=huidig,t0=performance.now();huidig=doel;(function stap(t){const p=Math.min(1,(t-t0)/500);scoreEl.textContent=Math.round(start+(doel-start)*p);if(p<1)requestAnimationFrame(stap)})(t0)}
-function update(){const on=Object.fromEntries(ids.map(i=>[i,document.getElementById(i).checked]));const n=ids.filter(i=>on[i]).length;const t=n>=5?2:n>=2?1:0;
-naamEl.textContent=T[t][0];const r=(t?5:2)-n;wat.textContent=T[t][1]+(t<2?' Nog '+r+' mijlpa'+(r>1?'len':'al')+' tot '+T[t+1][0]+'.':'');
-tr.forEach((s,x)=>s.classList.toggle('aan',x<=t));balk.style.width=(n/5*100)+'%';
-nivEl.textContent=T[t][0];kaart.classList.toggle('top',t===2);tel(SC[n]);
-const st={snel:on.m2?96:30,klant:on.m3?92:35,erv:on.m4?95:on.m1?50:15,prijs:on.m5?100:10};
-kaart.querySelectorAll('[data-s]').forEach(b=>b.style.width=st[b.dataset.s]+'%');
-kaart.querySelectorAll('.pk-badge').forEach(b=>b.classList.toggle('aan',on[b.dataset.m]))}
-kaart.querySelectorAll('.pk-chip').forEach(c=>c.addEventListener('click',()=>{kaart.querySelectorAll('.pk-chip').forEach(x=>x.classList.toggle('aan',x===c));vakEl.textContent='Vakman '+c.dataset.vak.toLowerCase()}));
-ids.forEach(i=>document.getElementById(i).addEventListener('change',update));update()})();
+(function(){const trap=document.getElementById('trap');if(!trap)return;
+const bs=[...document.querySelectorAll('.tr-badge')],tr=[...trap.querySelectorAll('.trede')],balk=document.getElementById('trBalk');
+function update(){const n=bs.filter(b=>b.classList.contains('aan')).length;const t=n>=5?2:n>=2?1:0;
+balk.style.width=(n/5*100)+'%';tr.forEach((d,x)=>{d.classList.toggle('bereikt',x<=t);d.classList.toggle('nu',x===t)})}
+bs.forEach(b=>b.addEventListener('click',()=>{const on=b.classList.toggle('aan');b.setAttribute('aria-pressed',on);update()}));update()})();
 
 (function(){const box=document.getElementById('prijsvelden');if(!box)return;const f=()=>{box.hidden=(document.querySelector('input[name="prijsmodus"]:checked')||{}).value!=='nu'};document.querySelectorAll('input[name="prijsmodus"]').forEach(i=>i.addEventListener('change',f));f()})();
 
