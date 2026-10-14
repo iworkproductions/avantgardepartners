@@ -261,6 +261,34 @@ input:focus,select:focus{border-color:var(--goud);outline:none}
 .uitkomst .naam{font-size:clamp(26px,2.6vw,36px);letter-spacing:-.02em;line-height:1.1;margin-bottom:10px}
 .uitkomst .dim{font-size:15px;line-height:1.55}
 .ladder{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}.ladder span{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:6px 11px;border:1px solid var(--lijn);border-radius:980px;color:var(--dim);transition:background .3s,color .3s}.ladder span.aan{background:var(--creme);color:var(--zwart);border-color:var(--creme)}.ladbalk{height:6px;border-radius:3px;background:var(--lijn);margin-bottom:18px;overflow:hidden}.ladbalk i{display:block;height:100%;width:0;background:var(--goud);transition:width .45s cubic-bezier(.2,.8,.2,1)}
+.pkaart{position:relative;overflow:hidden;max-width:440px;margin-left:auto;padding:30px 30px 26px;border-radius:24px;background:linear-gradient(160deg,#241f18 0%,#0d0b09 70%);color:#f3ede3;border:1px solid rgba(201,168,119,.45);box-shadow:0 30px 60px -20px rgba(13,11,9,.55);transition:box-shadow .5s,border-color .5s,transform .5s}
+.pkaart.top{border-color:#c9a877;box-shadow:0 30px 70px -18px rgba(201,168,119,.55),0 0 0 1px #c9a877 inset;transform:translateY(-4px)}
+.pk-glans{position:absolute;inset:-40%;background:linear-gradient(115deg,transparent 40%,rgba(201,168,119,.18) 50%,transparent 60%);transform:translateX(-60%);pointer-events:none}
+.pkaart.top .pk-glans{animation:glans 2.4s ease-in-out infinite}
+@keyframes glans{to{transform:translateX(60%)}}
+.pk-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px}
+.pk-score b{display:block;font-size:76px;font-weight:200;letter-spacing:-.05em;line-height:.9;color:#c9a877}
+.pk-score span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#a89f92}
+.pk-niv{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:7px 12px;border-radius:980px;border:1px solid rgba(201,168,119,.5);color:#c9a877}
+.pkaart.top .pk-niv{background:#c9a877;color:#0d0b09}
+.pk-wie{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#a89f92;margin:0 0 4px}
+.pk-vak{font-size:clamp(24px,2.4vw,30px);letter-spacing:-.02em;margin:0 0 14px}
+.pk-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
+.pk-chip{font:inherit;font-size:12px;padding:7px 12px;min-height:34px;border-radius:980px;border:1px solid rgba(243,237,227,.18);background:transparent;color:#a89f92;cursor:pointer;transition:all .25s}
+.pk-chip.aan{background:#f3ede3;color:#0d0b09;border-color:#f3ede3}
+.pk-chip:focus-visible{outline:2px solid #c9a877;outline-offset:2px}
+.pk-stats{display:grid;gap:11px;margin-bottom:22px}
+.pk-stat{display:grid;grid-template-columns:110px 1fr;align-items:center;gap:12px;font-size:13px;color:#d8d0c3}
+.pk-stat i{height:6px;border-radius:3px;background:rgba(243,237,227,.1);overflow:hidden}
+.pk-stat b{display:block;height:100%;width:20%;background:#c9a877;border-radius:3px;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.pk-badges{display:flex;gap:10px;margin-bottom:24px}
+.pk-badge{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1px dashed rgba(243,237,227,.2);opacity:.45;transition:all .35s}
+.pk-badge svg{width:20px;height:20px;fill:none;stroke:#a89f92;stroke-width:1.6}
+.pk-badge.aan{opacity:1;border:1px solid #c9a877;background:rgba(201,168,119,.14);transform:scale(1.06)}
+.pk-badge.aan svg{stroke:#c9a877}
+.pk-cta{width:100%;background:#c9a877;color:#0d0b09}.pk-cta:hover{background:#f3ede3}
+.pk-noot{font-size:12px;color:#a89f92;text-align:center;margin:10px 0 0}
+@media(max-width:760px){.pkaart{margin:0 auto}}
 .facade.config .deel{opacity:.16;filter:grayscale(1)}
 .facade.config .deel.aan{opacity:1;filter:none}
 .veld .lbl{display:block;font-size:14px;margin-bottom:8px;display:block;margin-bottom:10px}
@@ -560,7 +588,7 @@ input:focus,select:focus{border-color:var(--goud);outline:none}
     <div class="kop-blok"><p class="eye">Partner-ladder</p><h2>Bouw je plek.<br>Klim naar de top.</h2></div>
     <div class="binnen pakket">
       <div class="config">
-        <p class="dim" style="font-size:17px;line-height:1.55;margin-bottom:28px">Bij Avant-Garde word je beloond voor goed werk. Elke mijlpaal bouwt een stuk van de villa en brengt je een trede hoger. Hoe hoger je staat, hoe eerder jij de klus krijgt. Zet ze maar eens aan.</p>
+        <p class="dim" style="font-size:17px;line-height:1.55;margin-bottom:28px">Bij Avant-Garde word je beloond voor goed werk. Elke mijlpaal laat je partnerscore stijgen en brengt je een trede hoger. Hoe hoger je staat, hoe eerder jij de klus krijgt. Zet ze maar eens aan.</p>
         <fieldset class="kies"><legend class="kopje">Mijlpalen</legend>
           <label class="schakel"><span class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M5 14.5l6 6L23 8"/></svg></span><span>Je eerste klus opgeleverd</span><input type="checkbox" id="m1"><i aria-hidden="true"></i></label><label class="schakel"><span class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="10.5"/><path d="M14 8v6l4 3"/></svg></span><span>Altijd binnen 48 uur langs, 48 uur later je offerte</span><input type="checkbox" id="m2"><i aria-hidden="true"></i></label><label class="schakel"><span class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 3.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L14 19.3l-6.4 3.6 1.5-7.1-5.4-4.9 7.2-.8z"/></svg></span><span>Klanten geven je gemiddeld 4,5 ster of meer</span><input type="checkbox" id="m3"><i aria-hidden="true"></i></label><label class="schakel"><span class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><rect x="4.5" y="4.5" width="19" height="19" rx="2"/><path d="M9 14h10M14 9v10"/></svg></span><span>Vijf klussen netjes opgeleverd</span><input type="checkbox" id="m4"><i aria-hidden="true"></i></label><label class="schakel"><span class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M7 3.5h14v21H7z"/><path d="M10.5 9h7M10.5 13h7M10.5 17h4"/></svg></span><span>Je vaste prijslijst ingevuld</span><input type="checkbox" id="m5"><i aria-hidden="true"></i></label>
         </fieldset>
@@ -572,46 +600,17 @@ input:focus,select:focus{border-color:var(--goud);outline:none}
         </div>
       </div>
       <div>
-        <svg class="facade" id="villa" viewBox="0 0 800 520" role="img" aria-labelledby="facadeTitle">
-  <title id="facadeTitle">Moderne villa met de Avant-Garde Look: crepi, een volume in natuursteen, houtlook, antraciet kozijnen, een nieuw dak met strakke antraciet pannen, een schoorsteen en een warmtepomp</title>
-  <defs>
-    <linearGradient id="lucht" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9edf0"/><stop offset=".7" stop-color="#f4efe7"/><stop offset="1" stop-color="#f1eadf"/></linearGradient>
-    <linearGradient id="gras" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b7bda6"/><stop offset="1" stop-color="#a2a991"/></linearGradient>
-    <linearGradient id="glas" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#aebac0"/><stop offset=".55" stop-color="#7e8c94"/><stop offset="1" stop-color="#5b6870"/></linearGradient>
-    <linearGradient id="muur" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ebe5da"/><stop offset="1" stop-color="#f5f0e8"/></linearGradient>
-    <linearGradient id="oversteek" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".22"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient>
-    <linearGradient id="pad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9d2c6"/><stop offset="1" stop-color="#cbc3b6"/></linearGradient>
-    <radialGradient id="schaduw" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".16"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
-    <pattern id="steen" width="30" height="13" patternUnits="userSpaceOnUse"><rect width="30" height="13" fill="#8a8173"/><rect x=".6" y=".6" width="17" height="5.4" fill="#b3a998"/><rect x="18.6" y=".6" width="10.8" height="5.4" fill="#a69c8b"/><rect x=".6" y="7" width="8" height="5.4" fill="#aba190"/><rect x="9.6" y="7" width="19.8" height="5.4" fill="#bbb1a0"/></pattern>
-    <pattern id="hout" width="7" height="10" patternUnits="userSpaceOnUse"><rect width="7" height="10" fill="#5a3d27"/><rect width="5.4" height="10" fill="#8a603d"/><rect x="1.2" width=".5" height="10" fill="#7a5434"/></pattern>
-    <pattern id="pannen" width="20" height="9" patternUnits="userSpaceOnUse"><rect width="20" height="9" fill="#3b3e42"/><rect y="8.2" width="20" height=".8" fill="#26282b"/><rect x="0" y="0" width=".7" height="8.2" fill="#303235"/><rect x="10" y="0" width=".7" height="8.2" fill="#303235"/><rect y="0" width="20" height="1.2" fill="#46494e"/></pattern>
-    <pattern id="korrel" width="4" height="4" patternUnits="userSpaceOnUse"><circle cx="1" cy="1.3" r=".3" fill="#000" opacity=".05"/><circle cx="3" cy="3.2" r=".25" fill="#000" opacity=".04"/></pattern>
-    <clipPath id="kader"><rect width="800" height="520" rx="6"/></clipPath>
-  </defs>
-  <g clip-path="url(#kader)">
-  <rect width="800" height="520" fill="url(#lucht)"/>
-  <g fill="#d6dacd"><ellipse cx="60" cy="340" rx="70" ry="115"/><ellipse cx="130" cy="385" rx="55" ry="75"/><ellipse cx="760" cy="330" rx="80" ry="125"/><ellipse cx="702" cy="375" rx="50" ry="65"/></g>
-  <rect y="430" width="800" height="90" fill="url(#gras)"/>
-  <ellipse cx="420" cy="434" rx="330" ry="14" fill="url(#schaduw)"/>
-  <polygon points="300,430 360,430 420,520 250,520" fill="url(#pad)"/>
-  <g class="deel" data-laag="crepi"><rect x="166" y="209" width="308" height="221" fill="url(#muur)"/><rect x="166" y="209" width="308" height="221" fill="url(#korrel)"/><rect x="166" y="209" width="308" height="18" fill="url(#oversteek)"/></g>
-  <g class="deel" data-laag="hout"><rect x="268" y="209" width="104" height="109" fill="url(#hout)"/></g>
-  <g class="deel" data-laag="steen"><rect x="474" y="300" width="208" height="130" fill="url(#steen)"/><rect x="474" y="301" width="208" height="14" fill="url(#oversteek)"/><rect x="474" y="300" width="4" height="130" fill="#000" opacity=".12"/></g>
-  <g class="deel" data-laag="dak"><polygon points="150,206 320,70 490,206" fill="url(#pannen)"/><polygon points="140,208 320,62 500,208 490,208 320,74 150,208" fill="#2a2c2f"/><rect x="140" y="205" width="360" height="4" fill="#2a2c2f"/><rect x="408" y="96" width="26" height="60" fill="url(#steen)"/><rect x="404" y="90" width="34" height="7" fill="#2a2c2f"/><rect x="466" y="292" width="224" height="9" fill="#2a2c2f"/></g>
-  <rect x="166" y="422" width="516" height="8" fill="#4a4c4f"/>
-  <rect x="279" y="342" width="6" height="11" fill="#2e3033"/><rect x="355" y="342" width="6" height="11" fill="#2e3033"/>
-  <g class="deel" data-laag="kapel"><rect x="214" y="152" width="80" height="7" fill="#2a2c2f"/><rect x="220" y="159" width="68" height="42" fill="#3b3e42"/><rect x="220" y="159" width="68" height="6" fill="url(#oversteek)"/><rect x="229" y="166" width="50" height="28" fill="#58646b"/><rect x="229" y="166" width="50" height="28" fill="url(#glas)"/><polygon points="236,194 252,166 260,166 244,194" fill="#fff" opacity=".10"/><rect x="252.8" y="166" width="2.4" height="28" fill="#2e3033"/><rect x="229" y="166" width="50" height="28" fill="none" stroke="#2e3033" stroke-width="3"/></g>
-  <g class="deel" data-laag="kozijn"><rect x="196" y="232" width="52" height="66" fill="#58646b"/><rect class="glow" x="196" y="232" width="52" height="66" fill="url(#glas)" style="animation-delay:0.1s"/><polygon points="203.8,298 224.6,232 235.0,232 214.2,298" fill="#fff" opacity=".10"/><rect x="220.8" y="232" width="2.4" height="66" fill="#2e3033"/><rect x="196" y="232" width="52" height="66" fill="none" stroke="#2e3033" stroke-width="3.5"/><rect x="292" y="222" width="56" height="86" fill="#58646b"/><rect class="glow" x="292" y="222" width="56" height="86" fill="url(#glas)" style="animation-delay:0.25s"/><polygon points="300.4,308 322.8,222 334.0,222 311.6,308" fill="#fff" opacity=".10"/><rect x="318.8" y="222" width="2.4" height="86" fill="#2e3033"/><rect x="292" y="222" width="56" height="86" fill="none" stroke="#2e3033" stroke-width="3.5"/><rect x="392" y="232" width="52" height="66" fill="#58646b"/><rect class="glow" x="392" y="232" width="52" height="66" fill="url(#glas)" style="animation-delay:0.4s"/><polygon points="399.8,298 420.6,232 431.0,232 410.2,298" fill="#fff" opacity=".10"/><rect x="416.8" y="232" width="2.4" height="66" fill="#2e3033"/><rect x="392" y="232" width="52" height="66" fill="none" stroke="#2e3033" stroke-width="3.5"/><rect x="186" y="336" width="70" height="86" fill="#58646b"/><rect class="glow" x="186" y="336" width="70" height="86" fill="url(#glas)" style="animation-delay:0.55s"/><polygon points="196.5,422 224.5,336 238.5,336 210.5,422" fill="#fff" opacity=".10"/><rect x="219.8" y="336" width="2.4" height="86" fill="#2e3033"/><rect x="186" y="336" width="70" height="86" fill="none" stroke="#2e3033" stroke-width="3.5"/><rect x="392" y="336" width="60" height="86" fill="#58646b"/><rect class="glow" x="392" y="336" width="60" height="86" fill="url(#glas)" style="animation-delay:0.7s"/><polygon points="401.0,422 425.0,336 437.0,336 413.0,422" fill="#fff" opacity=".10"/><rect x="420.8" y="336" width="2.4" height="86" fill="#2e3033"/><rect x="392" y="336" width="60" height="86" fill="none" stroke="#2e3033" stroke-width="3.5"/><rect x="502" y="322" width="152" height="98" fill="#58646b"/><rect class="glow" x="502" y="322" width="152" height="98" fill="url(#glas)" style="animation-delay:0.85s"/><polygon points="524.8,420 585.6,322 616.0,322 555.2,420" fill="#fff" opacity=".10"/><rect x="551.5" y="322" width="2.4" height="98" fill="#2e3033"/><rect x="602.1" y="322" width="2.4" height="98" fill="#2e3033"/><rect x="502" y="322" width="152" height="98" fill="none" stroke="#2e3033" stroke-width="3.5"/><rect x="298" y="344" width="44" height="86" fill="#58646b"/><rect class="glow" x="298" y="344" width="44" height="86" fill="url(#glas)" style="animation-delay:1s"/><polygon points="304.6,430 322.2,344 331.0,344 313.4,430" fill="#fff" opacity=".10"/><rect x="318.8" y="344" width="2.4" height="86" fill="#2e3033"/><rect x="298" y="344" width="44" height="86" fill="none" stroke="#2e3033" stroke-width="3.5"/><rect x="286" y="334" width="68" height="5" fill="#2e3033"/></g>
-  <rect x="262" y="404" width="26" height="26" fill="#2e3033"/><rect x="262" y="404" width="26" height="3" fill="#3d4044"/><rect x="274" y="376" width="2" height="30" fill="#5a4a3a"/><ellipse cx="275" cy="372" rx="15" ry="13" fill="#6f7a5c"/><ellipse cx="269" cy="378" rx="9" ry="7" fill="#7f8a69"/><ellipse cx="281" cy="366" rx="8" ry="7" fill="#65704f"/>
-  <rect x="352" y="404" width="26" height="26" fill="#2e3033"/><rect x="352" y="404" width="26" height="3" fill="#3d4044"/><rect x="364" y="376" width="2" height="30" fill="#5a4a3a"/><ellipse cx="365" cy="372" rx="15" ry="13" fill="#6f7a5c"/><ellipse cx="359" cy="378" rx="9" ry="7" fill="#7f8a69"/><ellipse cx="371" cy="366" rx="8" ry="7" fill="#65704f"/>
-  <g class="deel" data-laag="wp"><rect x="692" y="398" width="46" height="32" rx="2" fill="#e2ddd4" stroke="#c9c2b6" stroke-width="1"/><circle cx="708" cy="414" r="9.5" fill="none" stroke="#8d867b" stroke-width="1.3"/><circle cx="708" cy="414" r="1.7" fill="#8d867b"/><path d="M724 405h9M724 410h9M724 415h9" stroke="#8d867b" stroke-width="1"/></g>
-  <rect x="150" y="428" width="104" height="16" rx="8" fill="#8f987b"/>
-  <rect x="388" y="428" width="300" height="16" rx="8" fill="#8f987b"/>
-  <rect x="118" y="382" width="4" height="50" fill="#6a5a48"/>
-  <ellipse cx="120" cy="374" rx="26" ry="22" fill="#8a9474"/><ellipse cx="108" cy="382" rx="16" ry="13" fill="#98a282"/>
-  <g fill="#2e3033"><rect x="289" y="452" width="4" height="14"/><rect x="367" y="452" width="4" height="14"/><rect x="268" y="484" width="5" height="16"/><rect x="396" y="484" width="5" height="16"/></g>
-  </g>
-</svg>
+        <div class="pkaart" id="pkaart" aria-live="polite">
+          <div class="pk-glans" aria-hidden="true"></div>
+          <div class="pk-top"><div class="pk-score"><b id="pk-score">60</b><span>Partnerscore</span></div><div class="pk-niv" id="pk-niv">Starter</div></div>
+          <p class="pk-wie">Jouw partnerkaart</p>
+          <p class="pk-vak" id="pk-vak">Vakman crepi</p>
+          <div class="pk-chips" role="group" aria-label="Kies je vak"><button type="button" class="pk-chip" data-vak="Dak">Dak</button><button type="button" class="pk-chip" data-vak="Kozijnen">Kozijnen</button><button type="button" class="pk-chip aan" data-vak="Crepi">Crepi</button><button type="button" class="pk-chip" data-vak="Hout">Hout</button><button type="button" class="pk-chip" data-vak="Steen">Steen</button></div>
+          <div class="pk-stats"><div class="pk-stat"><span>Snelheid</span><i><b data-s="snel"></b></i></div><div class="pk-stat"><span>Klantscore</span><i><b data-s="klant"></b></i></div><div class="pk-stat"><span>Opleveringen</span><i><b data-s="erv"></b></i></div><div class="pk-stat"><span>Prijslijst</span><i><b data-s="prijs"></b></i></div></div>
+          <div class="pk-badges" aria-label="Verdiende mijlpalen"><span class="pk-badge" data-m="m1"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M5 14.5l6 6L23 8"/></svg></span><span class="pk-badge" data-m="m2"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="10.5"/><path d="M14 8v6l4 3"/></svg></span><span class="pk-badge" data-m="m3"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 3.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L14 19.3l-6.4 3.6 1.5-7.1-5.4-4.9 7.2-.8z"/></svg></span><span class="pk-badge" data-m="m4"><svg viewBox="0 0 28 28" aria-hidden="true"><rect x="4.5" y="4.5" width="19" height="19" rx="2"/><path d="M9 14h10M14 9v10"/></svg></span><span class="pk-badge" data-m="m5"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M7 3.5h14v21H7z"/><path d="M10.5 9h7M10.5 13h7M10.5 17h4"/></svg></span></div>
+          <a href="#aanmelden" class="pil pk-cta">Claim je partnerkaart</a>
+          <p class="pk-noot">Gratis aanmelden. Je begint als Starter.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1140,17 +1139,22 @@ i.addEventListener('click',()=>{vast=vast===i.dataset.laag?null:i.dataset.laag;t
 i.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();i.click()}})});
 })();
 
-(function(){const v=document.getElementById('villa');const naamEl=document.getElementById('lad-naam');if(!v||!naamEl)return;v.classList.add('config');
+(function(){const kaart=document.getElementById('pkaart');const naamEl=document.getElementById('lad-naam');if(!kaart||!naamEl)return;
 const wat=document.getElementById('lad-wat'),balk=document.getElementById('lad-balk'),tr=[...document.querySelectorAll('.ladder span')];
-const ids=['m1','m2','m3','m4','m5'],lagen=[['crepi'],['kozijn'],['dak'],['steen','hout'],['kapel','wp']];
+const scoreEl=document.getElementById('pk-score'),nivEl=document.getElementById('pk-niv'),vakEl=document.getElementById('pk-vak');
+const ids=['m1','m2','m3','m4','m5'],SC=[60,68,76,84,92,99];let huidig=60;
 const T=[['Starter','Je krijgt klussen in je regio. Wij vinden de klant, jij meet in, wij laten tekenen.'],
 ['Vaste partner','Voorrang in je regio: nieuwe klanten in jouw vak komen eerst bij jou.'],
-['Top-partner','Eerste keus bij hele klussen, en je staat in de Avant-Garde-map als aanbevolen vakman. De villa is af.']];
-function update(){const n=ids.filter(i=>document.getElementById(i).checked).length;const t=n>=5?2:n>=2?1:0;
-const aan=new Set(ids.flatMap((i,x)=>document.getElementById(i).checked?lagen[x]:[]));
-v.querySelectorAll('.deel').forEach(el=>el.classList.toggle('aan',aan.has(el.dataset.laag)));
-naamEl.textContent=T[t][0];wat.textContent=T[t][1]+(t<2?' Nog '+((t?5:2)-n)+' mijlpa'+(((t?5:2)-n)>1?'len':'al')+' tot '+T[t+1][0]+'.':'');
-tr.forEach((s,x)=>s.classList.toggle('aan',x<=t));balk.style.width=(n/5*100)+'%'}
+['Top-partner','Eerste keus bij hele klussen, en je staat in de Avant-Garde-map als aanbevolen vakman.']];
+function tel(doel){const start=huidig,t0=performance.now();huidig=doel;(function stap(t){const p=Math.min(1,(t-t0)/500);scoreEl.textContent=Math.round(start+(doel-start)*p);if(p<1)requestAnimationFrame(stap)})(t0)}
+function update(){const on=Object.fromEntries(ids.map(i=>[i,document.getElementById(i).checked]));const n=ids.filter(i=>on[i]).length;const t=n>=5?2:n>=2?1:0;
+naamEl.textContent=T[t][0];const r=(t?5:2)-n;wat.textContent=T[t][1]+(t<2?' Nog '+r+' mijlpa'+(r>1?'len':'al')+' tot '+T[t+1][0]+'.':'');
+tr.forEach((s,x)=>s.classList.toggle('aan',x<=t));balk.style.width=(n/5*100)+'%';
+nivEl.textContent=T[t][0];kaart.classList.toggle('top',t===2);tel(SC[n]);
+const st={snel:on.m2?96:30,klant:on.m3?92:35,erv:on.m4?95:on.m1?50:15,prijs:on.m5?100:10};
+kaart.querySelectorAll('[data-s]').forEach(b=>b.style.width=st[b.dataset.s]+'%');
+kaart.querySelectorAll('.pk-badge').forEach(b=>b.classList.toggle('aan',on[b.dataset.m]))}
+kaart.querySelectorAll('.pk-chip').forEach(c=>c.addEventListener('click',()=>{kaart.querySelectorAll('.pk-chip').forEach(x=>x.classList.toggle('aan',x===c));vakEl.textContent='Vakman '+c.dataset.vak.toLowerCase()}));
 ids.forEach(i=>document.getElementById(i).addEventListener('change',update));update()})();
 
 (function(){const box=document.getElementById('prijsvelden');if(!box)return;const f=()=>{box.hidden=(document.querySelector('input[name="prijsmodus"]:checked')||{}).value!=='nu'};document.querySelectorAll('input[name="prijsmodus"]').forEach(i=>i.addEventListener('change',f));f()})();
