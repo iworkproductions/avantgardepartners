@@ -260,6 +260,7 @@ input:focus,select:focus{border-color:var(--goud);outline:none}
 .cats span.aan{background:var(--creme);color:var(--zwart);border-color:var(--creme)}
 .uitkomst .naam{font-size:clamp(26px,2.6vw,36px);letter-spacing:-.02em;line-height:1.1;margin-bottom:10px}
 .uitkomst .dim{font-size:15px;line-height:1.55}
+.ladder{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}.ladder span{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:6px 11px;border:1px solid var(--lijn);border-radius:980px;color:var(--dim);transition:background .3s,color .3s}.ladder span.aan{background:var(--creme);color:var(--zwart);border-color:var(--creme)}.ladbalk{height:6px;border-radius:3px;background:var(--lijn);margin-bottom:18px;overflow:hidden}.ladbalk i{display:block;height:100%;width:0;background:var(--goud);transition:width .45s cubic-bezier(.2,.8,.2,1)}
 .facade.config .deel{opacity:.16;filter:grayscale(1)}
 .facade.config .deel.aan{opacity:1;filter:none}
 .veld .lbl{display:block;font-size:14px;margin-bottom:8px;display:block;margin-bottom:10px}
@@ -556,27 +557,18 @@ input:focus,select:focus{border-color:var(--goud);outline:none}
   </section>
 
   <section id="pakket" class="licht">
-    <div class="kop-blok"><p class="eye">Wat je bouwt</p><h2>Elke combinatie een naam.</h2></div>
+    <div class="kop-blok"><p class="eye">Partner-ladder</p><h2>Bouw je plek.<br>Klim naar de top.</h2></div>
     <div class="binnen pakket">
       <div class="config">
-        <p class="dim" style="font-size:17px;line-height:1.55;margin-bottom:34px">Elke klant stelt zijn eigen klus samen. Elke combinatie heeft een vaste naam, zodat klant, partner en Avant-Garde precies weten waar het over gaat.</p>
-        <fieldset class="kies"><legend class="kopje">Gevel</legend>
-          <div class="seg3" role="radiogroup">
-            <input type="radio" name="cf-gevel" id="cf-g0" value=""><label for="cf-g0">Geen</label>
-            <input type="radio" name="cf-gevel" id="cf-g1" value="crepi"><label for="cf-g1">Crepi</label>
-            <input type="radio" name="cf-gevel" id="cf-g2" value="look" checked><label for="cf-g2">Avant-Garde Look</label>
-          </div>
-        </fieldset>
-        <fieldset class="kies"><legend class="kopje">Uitbreidingen</legend>
-          <label class="schakel"><span class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M2.5 15 14 5l11.5 10"/><path d="M19 9.4V5h3v7"/><path d="M6 12.5V24h16V12.5"/></svg></span><span>Nieuw dak met schoorsteenrenovatie</span><input type="checkbox" id="cf-dak" checked><i aria-hidden="true"></i></label>
-          <label class="schakel"><span class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M2.5 20 14 9l11.5 11"/><path d="M9 14.5V9.5h10v5"/><rect x="11.5" y="11" width="5" height="3.5"/></svg></span><span>Dakkapel</span><input type="checkbox" id="cf-kap"><i aria-hidden="true"></i></label>
-          <label class="schakel"><span class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><rect x="5.5" y="3.5" width="17" height="21" rx="1"/><path d="M14 3.5v21M5.5 13h17"/><path d="M3.5 24.5h21"/></svg></span><span>Nieuwe kozijnen</span><input type="checkbox" id="cf-koz" checked><i aria-hidden="true"></i></label>
-          <label class="schakel"><span class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><rect x="3.5" y="6.5" width="21" height="16" rx="2"/><circle cx="12" cy="14.5" r="5"/><circle cx="12" cy="14.5" r="1" class="f"/><path d="M20 11h2M20 14h2M20 17h2"/></svg></span><span>Warmtepomp</span><input type="checkbox" id="cf-wp"><i aria-hidden="true"></i></label>
+        <p class="dim" style="font-size:17px;line-height:1.55;margin-bottom:28px">Bij Avant-Garde word je beloond voor goed werk. Elke mijlpaal bouwt een stuk van de villa en brengt je een trede hoger. Hoe hoger je staat, hoe eerder jij de klus krijgt. Zet ze maar eens aan.</p>
+        <fieldset class="kies"><legend class="kopje">Mijlpalen</legend>
+          <label class="schakel"><span class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M5 14.5l6 6L23 8"/></svg></span><span>Je eerste klus opgeleverd</span><input type="checkbox" id="m1"><i aria-hidden="true"></i></label><label class="schakel"><span class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="10.5"/><path d="M14 8v6l4 3"/></svg></span><span>Altijd binnen 48 uur langs, 48 uur later je offerte</span><input type="checkbox" id="m2"><i aria-hidden="true"></i></label><label class="schakel"><span class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 3.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L14 19.3l-6.4 3.6 1.5-7.1-5.4-4.9 7.2-.8z"/></svg></span><span>Klanten geven je gemiddeld 4,5 ster of meer</span><input type="checkbox" id="m3"><i aria-hidden="true"></i></label><label class="schakel"><span class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><rect x="4.5" y="4.5" width="19" height="19" rx="2"/><path d="M9 14h10M14 9v10"/></svg></span><span>Vijf klussen netjes opgeleverd</span><input type="checkbox" id="m4"><i aria-hidden="true"></i></label><label class="schakel"><span class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M7 3.5h14v21H7z"/><path d="M10.5 9h7M10.5 13h7M10.5 17h4"/></svg></span><span>Je vaste prijslijst ingevuld</span><input type="checkbox" id="m5"><i aria-hidden="true"></i></label>
         </fieldset>
         <div class="uitkomst" aria-live="polite">
-          <div class="cats" aria-hidden="true"><span data-cat="Onderdeel">Onderdeel</span><span data-cat="Gevel">Gevel</span><span data-cat="Gevel Plus">Gevel Plus</span><span data-cat="Compleet">Compleet</span></div>
-          <p class="naam" id="cf-naam">Avant-Garde Compleet</p>
-          <p class="dim" id="cf-omschr"></p>
+          <div class="ladder" aria-hidden="true"><span data-t="0">Starter</span><span data-t="1">Vaste partner</span><span data-t="2">Top-partner</span></div>
+          <div class="ladbalk" aria-hidden="true"><i id="lad-balk"></i></div>
+          <p class="naam" id="lad-naam">Starter</p>
+          <p class="dim" id="lad-wat"></p>
         </div>
       </div>
       <div>
@@ -620,15 +612,6 @@ input:focus,select:focus{border-color:var(--goud);outline:none}
   <g fill="#2e3033"><rect x="289" y="452" width="4" height="14"/><rect x="367" y="452" width="4" height="14"/><rect x="268" y="484" width="5" height="16"/><rect x="396" y="484" width="5" height="16"/></g>
   </g>
 </svg>
-        <div class="legenda" aria-hidden="true">
-          <span><i style="background:#e9e2d6;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)"></i>Crepi</span>
-          <span><i style="background:#9a8f80"></i>Natuursteen</span>
-          <span><i style="background:#80593b"></i>Houtlook</span>
-          <span><i style="background:#3b3e42"></i>Nieuw dak</span>
-          <span><i style="background:#58646b;box-shadow:inset 0 0 0 2px #3b3e42"></i>Dakkapel</span>
-          <span><i style="background:#7e8c94;box-shadow:inset 0 0 0 2px #2e3033"></i>Nieuwe kozijnen</span>
-          <span><i style="background:#cfc8bd"></i>Warmtepomp</span>
-        </div>
       </div>
     </div>
   </section>
@@ -1157,21 +1140,18 @@ i.addEventListener('click',()=>{vast=vast===i.dataset.laag?null:i.dataset.laag;t
 i.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();i.click()}})});
 })();
 
-(function(){const v=document.getElementById('villa');const naamEl=document.getElementById('cf-naam');if(!v||!naamEl)return;v.classList.add('config');
-const omschr=document.getElementById('cf-omschr');const cats=[...document.querySelectorAll('.cats span')];
-function naamVan(g,d,kap,k){const it=[];if(d)it.push('Dak');if(kap)it.push('Dakkapel');if(k)it.push('Kozijnen');const j=a=>a.length<2?a.join(''):a.slice(0,-1).join(', ')+' & '+a[a.length-1];
-if(!g)return it.length?['Avant-Garde '+j(it),'Onderdeel']:['',''];
-const B=g==='look'?'Look':'Crepi';
-if(d&&k)return[(g==='look'?'Avant-Garde Compleet':'Crepi Compleet')+(kap?' & Dakkapel':''),'Compleet'];
-if(!it.length)return['Avant-Garde '+B,'Gevel'];
-return[B+(it.length===1?' & ':', ')+j(it),((d||kap)&&k)?'Compleet':'Gevel Plus']}
-function update(){const g=(document.querySelector('input[name="cf-gevel"]:checked')||{}).value||'';const d=document.getElementById('cf-dak').checked,kap=document.getElementById('cf-kap').checked,k=document.getElementById('cf-koz').checked,w=document.getElementById('cf-wp').checked;
-let [naam,cat]=naamVan(g,d,kap,k);
-const delen=[];if(g)delen.push('gevelisolatie met crepi');if(g==='look')delen.push('natuursteen','houtlook');if(d)delen.push('een nieuw dak met schoorsteenrenovatie');if(kap)delen.push('een dakkapel');if(k)delen.push('nieuwe kozijnen');if(w)delen.push('een warmtepomp');
-if(!naam){naamEl.textContent=w?'Alleen een warmtepomp':'Kies minimaal één onderdeel';omschr.textContent=w?'Een warmtepomp bieden we aan als aanvulling op een gevel, dak, dakkapel of kozijnen.':'Kies een gevel of een uitbreiding.';cats.forEach(c=>c.classList.remove('aan'))}
-else{naamEl.textContent=naam+(w?', met warmtepomp':'');const zin=delen.length>1?delen.slice(0,-1).join(', ')+' en '+delen[delen.length-1]:delen[0];omschr.textContent='Inbegrepen: '+zin+'.';cats.forEach(c=>c.classList.toggle('aan',c.dataset.cat===cat))}
-const aan={crepi:!!g,steen:g==='look',hout:g==='look',dak:d,kapel:kap,kozijn:k,wp:w};v.querySelectorAll('.deel').forEach(el=>el.classList.toggle('aan',!!aan[el.dataset.laag]))}
-document.querySelectorAll('input[name="cf-gevel"],#cf-dak,#cf-kap,#cf-koz,#cf-wp').forEach(i=>i.addEventListener('change',update));update()})();
+(function(){const v=document.getElementById('villa');const naamEl=document.getElementById('lad-naam');if(!v||!naamEl)return;v.classList.add('config');
+const wat=document.getElementById('lad-wat'),balk=document.getElementById('lad-balk'),tr=[...document.querySelectorAll('.ladder span')];
+const ids=['m1','m2','m3','m4','m5'],lagen=[['crepi'],['kozijn'],['dak'],['steen','hout'],['kapel','wp']];
+const T=[['Starter','Je krijgt klussen in je regio. Wij vinden de klant, jij meet in, wij laten tekenen.'],
+['Vaste partner','Voorrang in je regio: nieuwe klanten in jouw vak komen eerst bij jou.'],
+['Top-partner','Eerste keus bij hele klussen, en je staat in de Avant-Garde-map als aanbevolen vakman. De villa is af.']];
+function update(){const n=ids.filter(i=>document.getElementById(i).checked).length;const t=n>=5?2:n>=2?1:0;
+const aan=new Set(ids.flatMap((i,x)=>document.getElementById(i).checked?lagen[x]:[]));
+v.querySelectorAll('.deel').forEach(el=>el.classList.toggle('aan',aan.has(el.dataset.laag)));
+naamEl.textContent=T[t][0];wat.textContent=T[t][1]+(t<2?' Nog '+((t?5:2)-n)+' mijlpa'+(((t?5:2)-n)>1?'len':'al')+' tot '+T[t+1][0]+'.':'');
+tr.forEach((s,x)=>s.classList.toggle('aan',x<=t));balk.style.width=(n/5*100)+'%'}
+ids.forEach(i=>document.getElementById(i).addEventListener('change',update));update()})();
 
 (function(){const box=document.getElementById('prijsvelden');if(!box)return;const f=()=>{box.hidden=(document.querySelector('input[name="prijsmodus"]:checked')||{}).value!=='nu'};document.querySelectorAll('input[name="prijsmodus"]').forEach(i=>i.addEventListener('change',f));f()})();
 
